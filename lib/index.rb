@@ -57,7 +57,7 @@ require "logger"
 
 app = Rack::Lobster.new
 server = TCPServer.new 8080
-logger = Logger.new("/tmp/log/ruby.log")
+logger = Logger.new("/var/log/ruby.log")
 
 logger.info("Starting the server, ENV['REDIS_HOST']: #{ENV['REDIS_HOST']}, ENV['REDIS_PORT']: #{ENV['REDIS_PORT']}")
 # redis = Redis.new(host: ENV['REDIS_HOST'], port: ENV['REDIS_PORT'], db: 15)
