@@ -3,7 +3,7 @@ require 'mysql2'
 # Connect to the MySQL database
 client = Mysql2::Client.new(host: "localhost", username: "root", database: "benchmark")
 
-(1..2000).each do |i|
+(1..1000).each do |i|
     row = client.query("SELECT * FROM test_table WHERE id = #{i}").first
     if row
         client.query("DELETE FROM test_table WHERE id = #{i}")
@@ -16,7 +16,7 @@ client = Mysql2::Client.new(host: "localhost", username: "root", database: "benc
     client.query("INSERT INTO test_table (id, priority, available, test_num) VALUES (#{i}, '#{priority_value}', #{available}, #{test_num})")
 end
 
-(202001..204000).each do |i|
+(100001..101000).each do |i|
     row = client.query("SELECT * FROM test_table WHERE id = #{i}").first
     if row
         client.query("DELETE FROM test_table WHERE id = #{i}")
@@ -29,20 +29,7 @@ end
     client.query("INSERT INTO test_table (id, priority, available, test_num) VALUES (#{i}, '#{priority_value}', #{available}, #{test_num})")
 end
 
-(204001..206000).each do |i|
-    row = client.query("SELECT * FROM test_table WHERE id = #{i}").first
-    if row
-        client.query("DELETE FROM test_table WHERE id = #{i}")
-    end
-
-    random_number = rand(1..10000)
-    priority_value = "priority#{random_number}"
-    available = 100;
-    test_num = 1;
-    client.query("INSERT INTO test_table (id, priority, available, test_num) VALUES (#{i}, '#{priority_value}', #{available}, #{test_num})")
-end
-
-(206001..208000).each do |i|
+(200001..201000).each do |i|
     row = client.query("SELECT * FROM test_table WHERE id = #{i}").first
     if row
         client.query("DELETE FROM test_table WHERE id = #{i}")
@@ -55,7 +42,7 @@ end
     client.query("INSERT INTO test_table (id, priority, available, test_num) VALUES (#{i}, '#{priority_value}', #{available}, #{test_num})")
 end
 
-(2001..202000).each do |i|
+(300001..400000).each do |i|
     row = client.query("SELECT * FROM test_table WHERE id = #{i}").first
     if row
         client.query("DELETE FROM test_table WHERE id = #{i}")
