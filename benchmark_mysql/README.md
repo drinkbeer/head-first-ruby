@@ -1,4 +1,16 @@
 
+Setup local mysql
+```
+mysql -u root
+
+CREATE TABLE test_table(
+   id INT NOT NULL,
+   priority VARCHAR(255),
+   test_num INT NOT NULL DEFAULT 0,
+   available INT NOT NULL DEFAULT 100
+);
+```
+
 ```
 » ruby benchmark_mysql/bench_lock_contention.rb
        user     system      total        real
