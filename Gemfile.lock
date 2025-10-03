@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    mysql2 (0.5.6)
     rack (2.2.8.1)
     redis (3.0.7)
 
@@ -9,6 +10,7 @@ PLATFORMS
   universal-darwin-23
 
 DEPENDENCIES
+  mysql2
   rack (~> 2.2.3)
   redis (~> 3.0.1)
 
